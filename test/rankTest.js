@@ -10,7 +10,7 @@ rankTest('bar', async t => {
   t.is(await bar, 'bar');
 });
 
-rankTest('1.The voyage is 20 in length and china in zone.', t => {
+rankTest('1.The voyage is 20 in length and china in zone, the length of history is 12.', t => {
   //given
   const voyage = {
     zone: 'china',
@@ -65,6 +65,24 @@ rankTest('1.The voyage is 20 in length and china in zone.', t => {
       zone: 'west-africa',
       profit: 7,
     },
+  ];
+  //when
+  const myRating = rating(voyage, history);
+  //then
+  t.is(myRating, 'B')
+});
+
+rankTest('2.The voyage is 20 in length and china in zone, the length of history is 1.', t => {
+  //given
+  const voyage = {
+    zone: 'china',
+    length: 20,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    }
   ];
   //when
   const myRating = rating(voyage, history);
