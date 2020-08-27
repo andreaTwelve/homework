@@ -90,6 +90,24 @@ rankTest('2.The voyage is 20 in length and china in zone, the length of history 
   t.is(myRating, 'B')
 });
 
+rankTest('3.The voyage is 20 in length and east-indies in zone, the length of history is 1.', t => {
+  //given
+  const voyage = {
+    zone: 'east-indies',
+    length: 20,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    }
+  ];
+  //when
+  const myRating = rating(voyage, history);
+  //then
+  t.is(myRating, 'B')
+});
+
 const voyage = {
   zone: 'west-indies',
   length: 12,
