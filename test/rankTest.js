@@ -194,6 +194,130 @@ rankTest('4.The voyage is 20 in length and china in zone, the length of history 
   t.is(myRating, 'B')
 });
 
+rankTest('5.The voyage is 12 in length and china in zone, the length of history is 12.', t => {
+  //given
+  const voyage = {
+    zone: 'china',
+    length: 12,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+  //when
+  const myRating = rating(voyage, history);
+  //then
+  t.is(myRating, 'A')
+});
+
+rankTest('6.The voyage is 11 in length and china in zone, the length of history is 12.', t => {
+  //given
+  const voyage = {
+    zone: 'china',
+    length: 11,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+  //when
+  const myRating = rating(voyage, history);
+  //then
+  t.is(myRating, 'A')
+});
+
 const voyage = {
   zone: 'west-indies',
   length: 12,
