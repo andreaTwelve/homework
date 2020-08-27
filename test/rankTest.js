@@ -1,5 +1,5 @@
 const rankTest = require('ava');
-const { voyageRisk } = require('../src/rank');
+const { rating } = require('../src/rank');
 
 rankTest('foo', t => {
   t.pass();
@@ -10,13 +10,121 @@ rankTest('bar', async t => {
   t.is(await bar, 'bar');
 });
 
-rankTest('the length of voyage is 2', t => {
+rankTest('1.The voyage is 20 in length and china in zone.', t => {
   //given
   const voyage = {
-    'length': 4
+    zone: 'china',
+    length: 20,
   };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
   //when
-  const result = voyageRisk(voyage);
+  const myRating = rating(voyage, history);
   //then
-  t.is(result, 1)
-})
+  t.is(myRating, 'B')
+});
+
+const voyage = {
+  zone: 'west-indies',
+  length: 12,
+};
+const history = [
+  {
+    zone: 'east-indies',
+    profit: 5,
+  },
+  {
+    zone: 'west-indies',
+    profit: 15,
+  },
+  {
+    zone: 'china',
+    profit: -2,
+  },
+  {
+    zone: 'west-africa',
+    profit: 7,
+  },
+  {
+    zone: 'east-indies',
+    profit: 5,
+  },
+  {
+    zone: 'west-indies',
+    profit: 15,
+  },
+  {
+    zone: 'china',
+    profit: -2,
+  },
+  {
+    zone: 'west-africa',
+    profit: 7,
+  },
+  {
+    zone: 'east-indies',
+    profit: 5,
+  },
+  {
+    zone: 'west-indies',
+    profit: 15,
+  },
+  {
+    zone: 'china',
+    profit: -2,
+  },
+  {
+    zone: 'west-africa',
+    profit: 7,
+  },
+];
+const myRating = rating(voyage, history);
+console.log(`myRating: ${myRating}`);
