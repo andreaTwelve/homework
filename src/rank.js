@@ -31,6 +31,20 @@ function captainHistoryRisk (voyage, history) {
   return Math.max(result, 0);
 }
 
+function judgeVoyageZoneIsChinaAndHasChina(result, history, voyage) {
+  result += 3;
+  if (history.length > 10) {
+    result += 1;
+  }
+  if (voyage.length > 12) {
+    result += 1;
+  }
+  if (voyage.length > 18) {
+    result -= 1;
+  }
+  return result;
+}
+
 function voyageProfitFactor (voyage, history) {
   let result = 2;
   if (voyage.zone === 'china') {
@@ -40,16 +54,7 @@ function voyageProfitFactor (voyage, history) {
     result += 1;
   }
   if (voyage.zone === 'china' && hasChina(history)) {
-    result += 3;
-    if (history.length > 10) {
-      result += 1;
-    }
-    if (voyage.length > 12) {
-      result += 1;
-    }
-    if (voyage.length > 18) {
-      result -= 1;
-    }
+    result = judgeVoyageZoneIsChinaAndHasChina(result, history, voyage);
   }
   else {
     if (history.length > 8) {
