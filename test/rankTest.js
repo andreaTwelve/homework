@@ -90,11 +90,11 @@ rankTest('2.The voyage is 20 in length and east-indies in zone, the length of hi
   t.is(myRating, 'B')
 });
 
-rankTest('3.The voyage is 20 in length and china in zone, the length of history is 10.', t => {
+rankTest('3.The voyage is 15 in length and east-indies in zone, the length of history is 9.', t => {
   //given
   const voyage = {
-    zone: 'china',
-    length: 20,
+    zone: 'east-indies',
+    length: 15,
   };
   const history = [
     {
@@ -106,7 +106,7 @@ rankTest('3.The voyage is 20 in length and china in zone, the length of history 
       profit: 15,
     },
     {
-      zone: 'china',
+      zone: 'west-indies',
       profit: -2,
     },
     {
@@ -122,7 +122,7 @@ rankTest('3.The voyage is 20 in length and china in zone, the length of history 
       profit: 15,
     },
     {
-      zone: 'china',
+      zone: 'west-indies',
       profit: -2,
     },
     {
@@ -130,12 +130,8 @@ rankTest('3.The voyage is 20 in length and china in zone, the length of history 
       profit: 7,
     },
     {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
+      zone: 'west-africa',
+      profit: 7,
     }
   ];
   //when
@@ -144,395 +140,32 @@ rankTest('3.The voyage is 20 in length and china in zone, the length of history 
   t.is(myRating, 'B')
 });
 
-rankTest('4.The voyage is 20 in length and china in zone, the length of history is 9.', t => {
+rankTest('4.The voyage is 4 in length and china in zone, the length of history is 4.', t => {
   //given
   const voyage = {
     zone: 'china',
-    length: 20,
+    length: 4,
   };
   const history = [
     {
-      zone: 'east-indies',
+      zone: 'china',
       profit: 5,
     },
     {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
       zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
       profit: 5,
     },
     {
-      zone: 'west-indies',
-      profit: 15,
+      zone: 'china',
+      profit: 5,
     },
     {
       zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
       profit: 5,
     }
   ];
   //when
   const myRating = rating(voyage, history);
   //then
-  t.is(myRating, 'B')
-});
-
-rankTest('5.The voyage is 12 in length and china in zone, the length of history is 12.', t => {
-  //given
-  const voyage = {
-    zone: 'china',
-    length: 12,
-  };
-  const history = [
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-  ];
-  //when
-  const myRating = rating(voyage, history);
-  //then
   t.is(myRating, 'A')
 });
-
-rankTest('6.The voyage is 11 in length and china in zone, the length of history is 12.', t => {
-  //given
-  const voyage = {
-    zone: 'china',
-    length: 11,
-  };
-  const history = [
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-  ];
-  //when
-  const myRating = rating(voyage, history);
-  //then
-  t.is(myRating, 'A')
-});
-
-rankTest('7.The voyage is 18 in length and china in zone, the length of history is 12.', t => {
-  //given
-  const voyage = {
-    zone: 'china',
-    length: 11,
-  };
-  const history = [
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-  ];
-  //when
-  const myRating = rating(voyage, history);
-  //then
-  t.is(myRating, 'A')
-});
-
-rankTest('8.The voyage is 17 in length and china in zone, the length of history is 12.', t => {
-  //given
-  const voyage = {
-    zone: 'china',
-    length: 11,
-  };
-  const history = [
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-  ];
-  //when
-  const myRating = rating(voyage, history);
-  //then
-  t.is(myRating, 'A')
-});
-
-rankTest('9.The voyage is 20 in length and east-indies in zone, the length of history is 8.', t => {
-  //given
-  const voyage = {
-    zone: 'east-indies',
-    length: 20,
-  };
-  const history = [
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'west-indies',
-      profit: 15,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'west-africa',
-      profit: 7,
-    },
-  ];
-  //when
-  const myRating = rating(voyage, history);
-  //then
-  t.is(myRating, 'B')
-});
-
-const voyage = {
-  zone: 'west-indies',
-  length: 12,
-};
-const history = [
-  {
-    zone: 'east-indies',
-    profit: 5,
-  },
-  {
-    zone: 'west-indies',
-    profit: 15,
-  },
-  {
-    zone: 'china',
-    profit: -2,
-  },
-  {
-    zone: 'west-africa',
-    profit: 7,
-  },
-  {
-    zone: 'east-indies',
-    profit: 5,
-  },
-  {
-    zone: 'west-indies',
-    profit: 15,
-  },
-  {
-    zone: 'china',
-    profit: -2,
-  },
-  {
-    zone: 'west-africa',
-    profit: 7,
-  },
-  {
-    zone: 'east-indies',
-    profit: 5,
-  },
-  {
-    zone: 'west-indies',
-    profit: 15,
-  }
-];
-const myRating = rating(voyage, history);
-console.log(`myRating: ${myRating}`);

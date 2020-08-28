@@ -1,0 +1,1 @@
+{"processes":{"14a524da-0516-4071-86e9-8bc1b5cf1dfa":{"parent":null,"children":["724d7b20-f344-4e63-9f3c-49bef582ee41"]},"724d7b20-f344-4e63-9f3c-49bef582ee41":{"parent":"14a524da-0516-4071-86e9-8bc1b5cf1dfa","children":[]}},"files":{"D:\\8-node\\homework\\src\\rank.js":["724d7b20-f344-4e63-9f3c-49bef582ee41"]},"externalIds":{}}
